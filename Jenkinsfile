@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'mvn test -DsuiteXmlFile=src/test/resources/com/javacodegeeks/testng/selenium/testngBrowserConfigurable.xml'
+                sh 'mvn test -DsuiteXmlFile=src/test/resources/com/javacodegeeks/testng/selenium/testngBrowserConfigurableChromeOnly.xml'
             }
             post {
                 always {
