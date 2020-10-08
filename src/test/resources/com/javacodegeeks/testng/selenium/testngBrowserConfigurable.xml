@@ -7,5 +7,12 @@
 			<class
 				name="com.javacodegeeks.testng.selenium.TestNGSeleniumBrowserCfgExample" />
 		</classes>
-	</test>	
+	</test>
+	<test name="TestNgSeleniumFirefoxTest">
+		<parameter name="browser" value="firefox"></parameter>
+		<classes>
+			<class
+				name="com.javacodegeeks.testng.selenium.TestNGSeleniumBrowserCfgExample" />
+		</classes>
+	</test>
 </suite>
