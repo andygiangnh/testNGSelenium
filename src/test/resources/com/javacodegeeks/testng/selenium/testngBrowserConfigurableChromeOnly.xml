@@ -2,7 +2,7 @@
 <suite name="TestNgSeleniumSuite1" parallel="false">
 	<test name="TestNgSeleniumChromeTest">
 		<parameter name="browser" value="chrome"></parameter>
-		<parameter name="driverPath" value="chromedriver.jar"></parameter>
+		<parameter name="driverPath" value="chromedriver"></parameter>
 		<classes>
 			<class
 				name="com.javacodegeeks.testng.selenium.TestNGSeleniumBrowserCfgExample" />
