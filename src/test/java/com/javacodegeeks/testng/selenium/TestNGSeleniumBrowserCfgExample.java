@@ -1,10 +1,14 @@
 package com.javacodegeeks.testng.selenium;
 
+import java.net.URL;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
@@ -26,7 +30,11 @@ public class TestNGSeleniumBrowserCfgExample {
 			System.setProperty("webdriver.chrome.driver", driverPath);
 		}
 		if (browser.equals("chrome")) {			
-			driver = new ChromeDriver();
+			//driver = new ChromeDriver();
+			ChromeOptions chromeOptions = new ChromeOptions();
+			chromeOptions.setCapability("browserVersion", "67");
+			chromeOptions.setCapability("platformName", "Windows XP");
+			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
 		} else if (browser.equals("firefox")) {
 			driver = new FirefoxDriver();
 		} else {
