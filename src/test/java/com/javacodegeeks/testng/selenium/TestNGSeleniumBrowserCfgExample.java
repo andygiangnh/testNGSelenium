@@ -48,7 +48,7 @@ public class TestNGSeleniumBrowserCfgExample {
 	                return d.getTitle().toLowerCase().startsWith(searchKey.toLowerCase());
 	            }
 	        });
-		System.out.println("We've got " + searchKey + " results");
+		System.out.println("Yay! We've got " + searchKey + " results");
 	}
 
 	@DataProvider
