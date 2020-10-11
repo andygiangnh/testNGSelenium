@@ -23,7 +23,7 @@ public class TestNGSeleniumBrowserCfgExample {
 
 	@Parameters({"browser"})
 	@BeforeTest
-	public void initDriver(String browser, @Optional("") String driverPath) throws Exception {
+	public void initDriver(String browser) throws Exception {
 		System.out.println("You are testing on browser " + browser);
 		browser = browser.toLowerCase();
 		
