@@ -21,25 +21,16 @@ import org.testng.annotations.Test;
 public class TestNGSeleniumBrowserCfgExample {
 	private WebDriver driver;	
 
-	@Parameters({"browser", "driverPath"})
+	@Parameters({"browser"})
 	@BeforeTest
 	public void initDriver(String browser, @Optional("") String driverPath) throws Exception {
 		System.out.println("You are testing on browser " + browser);
 		browser = browser.toLowerCase();
-		if (!driverPath.equals("")) {
-			System.setProperty("webdriver.chrome.driver", driverPath);
-		}
-		if (browser.equals("chrome")) {			
-			//driver = new ChromeDriver();
-			ChromeOptions chromeOptions = new ChromeOptions();
-			chromeOptions.setCapability("browserVersion", "67");
-			chromeOptions.setCapability("platformName", "Windows XP");
-			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
-		} else if (browser.equals("firefox")) {
-			driver = new FirefoxDriver();
-		} else {
-			throw new RuntimeException("Please create a driver for " + browser);
-		}
+		
+		ChromeOptions options = new ChromeOptions()
+			.setHeadless(true);
+		
+		driver = new ChromeDriver(options);
 	}
 
 	@Test(dataProvider = "searchStrings")
