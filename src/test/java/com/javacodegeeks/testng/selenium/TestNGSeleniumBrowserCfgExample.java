@@ -52,7 +52,7 @@ public class TestNGSeleniumBrowserCfgExample {
 
 	@DataProvider
 	private Object[][] searchStrings() {
-		return new Object[][] { { "TestNG" }, { "Selenium" } };
+		return new Object[][] { { "TestNG" }, { "Selenium" }, { "Trump" } };
 	}
 
 	@AfterTest
